@@ -10,24 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.pearadox.scout_5414.MatchScoutActivity">
 
-    <ImageView
-        android:id="@+id/imageView_MS"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/red_scout"
-        android:contentDescription="Match Scout logo" />
-
-    <TextView
-        android:id="@+id/txt_Dev"
-        android:text="Dev. Name"
-        android:layout_width="80dp"
-        android:layout_height="25dp"
-        android:textSize="14dp"
-        android:textColor="@color/magenta"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/lbl_Student"
-        android:layout_toEndOf="@+id/lbl_Student" />
-
     <TextView
         android:id="@+id/lbl_Match"
         android:layout_width="70dp"
@@ -38,15 +20,7 @@
         android:layout_below="@+id/lbl_Student"
         android:layout_alignLeft="@+id/lbl_Student"
         android:layout_alignStart="@+id/lbl_Student" />
-    <TextView
-        android:id="@+id/lbl_Dev"
-        android:layout_width="70dp"
-        android:layout_height="25dp"
-        android:textSize="14dp"
-        android:textColor="@color/white"
-        android:text="Device"
-        android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/chkBox_rotor3" />
+
     <TextView
         android:id="@+id/txt_Match"
         android:text="T00"
@@ -58,16 +32,6 @@
         android:layout_alignBottom="@+id/lbl_Match"
         android:layout_toRightOf="@+id/lbl_Student"
         android:layout_toEndOf="@+id/lbl_Student" />
-
-    <TextView
-        android:id="@+id/lbl_Student"
-        android:layout_width="70dp"
-        android:layout_height="25dp"
-        android:textSize="14dp"
-        android:textColor="@color/white"
-        android:text="Student"
-        android:layout_below="@+id/txt_Dev"
-        android:layout_alignStart="@+id/lbl_Dev" />
 
     <TextView
         android:id="@+id/txt_Student"
@@ -124,56 +88,9 @@
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent"-->
         <!--android:layout_alignParentEnd="true">-->
-    <CheckBox
-        android:id="@+id/chkBox_rotor1"
-        android:text="Rotor 1"
-        android:layout_weight="1.38"
-        android:layout_width="90dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="61dp"
-        android:layout_below="@+id/lbl_space1"
-        android:layout_alignParentStart="true" />
-    <CheckBox
-        android:id="@+id/chkBox_rotor2"
-        android:text="Rotor 2"
-        android:layout_weight="1"
-        android:layout_width="90dp"
-        android:layout_height="30dp"
-        android:layout_alignBaseline="@+id/chkBox_rotor1"
-        android:layout_alignBottom="@+id/chkBox_rotor1"
-        android:layout_toEndOf="@+id/chkBox_rotor1" />
-    <CheckBox
-        android:id="@+id/chkBox_rotor3"
-        android:text="Rotor 3"
-        android:layout_weight="1"
-        android:layout_width="90dp"
-        android:layout_height="30dp"
-        android:layout_alignBaseline="@+id/chkBox_rotor1"
-        android:layout_alignBottom="@+id/chkBox_rotor1"
-        android:layout_toEndOf="@+id/chkBox_rotor2" />
-    <CheckBox
-        android:id="@+id/chkBox_rotor4"
-        android:text="Rotor 4"
-        android:layout_weight="1"
-        android:layout_width="90dp"
-        android:layout_height="30dp"
-        android:layout_alignBaseline="@+id/chkBox_rotor2"
-        android:layout_alignBottom="@+id/chkBox_rotor2"
-        android:layout_toEndOf="@+id/chkBox_rotor3" />
 
 
     // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-    <TextView
-        android:id="@+id/lbl_GearPlaced"
-        android:layout_width="100dp"
-        android:layout_height="25dp"
-        android:textSize="14dp"
-        android:textColor="@color/white"
-        android:text="Gear(s) Placed"
-        android:layout_below="@+id/chkBox_rotor1"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="32dp" />
 
     <TextView
         android:id="@+id/txt_GearsPlaced"
@@ -184,6 +101,38 @@
         android:textSize="14dp"
         android:textColor="@color/orange"
         android:layout_alignTop="@+id/lbl_GearPlaced" />
+
+    <TextView
+        android:id="@+id/lbl_Student"
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:textSize="14dp"
+        android:textColor="@color/white"
+        android:text="Student"
+        android:layout_below="@+id/lbl_Dev"
+        android:layout_toEndOf="@+id/imageView_MS" />
+
+    <CheckBox
+        android:id="@+id/chkBox_rotor1"
+        android:text="Gears"
+        android:layout_weight="1.38"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/lbl_space1"
+        android:layout_toEndOf="@+id/lbl_space1" />
+
+    <TextView
+        android:id="@+id/lbl_GearPlaced"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:textSize="14dp"
+        android:textColor="@color/white"
+        android:text="Gear(s) Placed"
+        android:layout_marginTop="28dp"
+        android:layout_below="@+id/chkBox_rotor1"
+        android:layout_alignParentStart="true" />
+
     <Button
         android:id="@+id/button_GearsPlus"
         android:text="+"
@@ -192,6 +141,27 @@
         android:layout_alignBaseline="@+id/txt_GearsPlaced"
         android:layout_alignBottom="@+id/txt_GearsPlaced"
         android:layout_toEndOf="@+id/txt_GearsPlaced" />
+
+    <CheckBox
+        android:id="@+id/chkBox_rotor2"
+        android:text="Balls"
+        android:layout_weight="1"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:layout_alignBaseline="@+id/chkBox_rotor1"
+        android:layout_alignBottom="@+id/chkBox_rotor1"
+        android:layout_toStartOf="@+id/txt_MyTeam" />
+
+    <CheckBox
+        android:id="@+id/chkBox_rotor3"
+        android:text="Rope"
+        android:layout_weight="1"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:layout_alignBaseline="@+id/chkBox_rotor1"
+        android:layout_alignBottom="@+id/chkBox_rotor1"
+        android:layout_alignStart="@+id/button_GearsPlus"
+        android:layout_marginStart="11dp" />
 
     <Button
         android:id="@+id/button_GearsMinus"
@@ -203,6 +173,42 @@
         android:layout_alignBottom="@+id/txt_GearsPlaced"
         android:layout_toEndOf="@+id/button_GearsPlus" />
 
+    <Button
+        android:text="NEXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_GoToTeleopActivity"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/txt_Dev"
+        android:text="Dev. Name"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:textSize="14dp"
+        android:textColor="@color/magenta"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/lbl_Student" />
+
+    <ImageView
+        android:id="@+id/imageView_MS"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/autonomous"
+        android:contentDescription=""
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/txt_GearsPlaced" />
+
+    <TextView
+        android:id="@+id/lbl_Dev"
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:textSize="14dp"
+        android:textColor="@color/white"
+        android:text="Device"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageView_MS" />
 
     <!--</LinearLayout>-->
 
