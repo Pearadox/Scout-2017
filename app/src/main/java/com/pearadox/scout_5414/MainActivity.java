@@ -9,6 +9,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Settings;
@@ -79,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
 //        Toast.makeText(this,"Device ID: " + deviceId, Toast.LENGTH_LONG).show();    // ** DEBUG
         Log.d(TAG, "Device ID: " + deviceId);                                       // ** DEBUG
         Pearadox.FRC514_Device = deviceId; 		// Save device ID
+
+        Resources res = getResources();
 
         setContentView(R.layout.activity_main);
         txt_messageLine = (TextView) findViewById(R.id.txt_messageLine);

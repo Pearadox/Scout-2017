@@ -1,11 +1,13 @@
 package com.pearadox.scout_5414;
 
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +22,7 @@ public class MatchScoutActivity extends AppCompatActivity {
     ImageView imgScoutLogo;
     TextView txt_TeamName;
     TextView txt_GearsPlaced;
-    private Button button_GearsMinus, button_GearsPlus;
+    private Button button_GearsMinus, button_GearsPlus, button_GoToTeleopActivity;
     int gearNum = 0;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -39,24 +41,37 @@ public class MatchScoutActivity extends AppCompatActivity {
         txt_GearsPlaced = (TextView) findViewById(R.id.txt_GearsPlaced);
         button_GearsMinus = (Button) findViewById(R.id.button_GearsMinus);
         button_GearsPlus = (Button) findViewById(R.id.button_GearsPlus);
+        button_GoToTeleopActivity = (Button) findViewById(R.id.button_GoToTeleopActivity);
         txt_GearsPlaced.setText(Integer.toString(gearNum));
 
         button_GearsPlus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // ToDo check to ensure not over MAX # gears
-                gearNum++;
+                if (gearNum < 12) {
+                    gearNum++;
+                }
                 Log.d(TAG, "Gears = " + gearNum);      // ** DEBUG **
                 txt_GearsPlaced.setText(Integer.toString(gearNum));    // Perform action on click
             }
         });
         button_GearsMinus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // ToDo make sure not already at zero
-                gearNum--;
+                if (gearNum >= 1) {
+                    gearNum--;
+                }
                 Log.d(TAG, "Gears = " + gearNum);      // ** DEBUG **
                 txt_GearsPlaced.setText(Integer.toString(gearNum));    // Perform action on click
             }
         });
+        button_GoToTeleopActivity.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            Intent smast_intent = new Intent(MatchScoutActivity.this, TeleopScoutActivity.class);
+            Bundle SMbundle = new Bundle();
+            smast_intent.putExtras(SMbundle);
+            startActivity(smast_intent);
+        }
+        });
+
         txt_dev = (TextView) findViewById(R.id.txt_Dev);
         txt_stud = (TextView) findViewById(R.id.txt_Student);
         txt_match = (TextView) findViewById(R.id.txt_Match);
@@ -64,7 +79,7 @@ public class MatchScoutActivity extends AppCompatActivity {
         imgScoutLogo = (ImageView) findViewById(R.id.imageView_SM);
         txt_dev.setText(param1);
         txt_stud.setText(param2);
-        String devcol = param1.substring(0,3);
+        String devcol = param1.substring(0, 3);
         Log.d(TAG, "color=" + devcol);
         if (devcol.equals("Red")) {
             // ToDo - figure out how to switch the image (changed for LollyPop?!?)
@@ -76,7 +91,7 @@ public class MatchScoutActivity extends AppCompatActivity {
 
     }
 
-//###################################################################
+    //###################################################################
 //###################################################################
 //###################################################################
     @Override
@@ -84,11 +99,13 @@ public class MatchScoutActivity extends AppCompatActivity {
         super.onResume();
         Log.v(TAG, "onResume");
     }
+
     @Override
     public void onStop() {
         super.onStop();
         Log.v(TAG, "onStop");
     }
+
     @Override
     public void onDestroy() {
         super.onDestroy();
