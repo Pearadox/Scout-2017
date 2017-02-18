@@ -1,3 +1,3 @@
-# Scout-5414
+# Scout-2017
 
-2017 Scouting App for FIRST Robotics by Pearadox 
+*******   TEST copy - DO NOT USE!!!!!!   *******
